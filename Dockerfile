@@ -24,7 +24,6 @@ FROM alpine:latest
 # Install runtime dependencies and PostgreSQL client versions 15, 16, 17
 # Note: Alpine supports multiple PostgreSQL client versions side by side
 RUN apk add --no-cache \
-    postgresql15-client \
     postgresql16-client \
     postgresql17-client \
     ca-certificates \
