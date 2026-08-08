@@ -24,11 +24,10 @@ FROM alpine:latest
 # Install runtime dependencies and PostgreSQL client versions 15, 16, 17
 # Note: Alpine supports multiple PostgreSQL client versions side by side
 RUN apk add --no-cache \
-    postgresql16-client \
-    postgresql17-client \
+    --repository=https://dl-cdn.alpinelinux.org/alpine/edge/main \
+    postgresql18-client \
     ca-certificates \
-    tzdata \
-    && apk add --no-cache --repository=https://dl-cdn.alpinelinux.org/alpine/edge/main postgresql18-client
+    tzdata
 
 # Create non-root user
 RUN addgroup -g 1000 -S backup && \
