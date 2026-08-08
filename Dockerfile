@@ -27,7 +27,8 @@ RUN apk add --no-cache \
     postgresql16-client \
     postgresql17-client \
     ca-certificates \
-    tzdata
+    tzdata \
+    && apk add --no-cache --repository=https://dl-cdn.alpinelinux.org/alpine/edge/main postgresql18-client
 
 # Create non-root user
 RUN addgroup -g 1000 -S backup && \
